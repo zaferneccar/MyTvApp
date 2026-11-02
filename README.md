@@ -46,6 +46,16 @@ npm run running
 
 > ⚠️ وضع المطوّر بيخلص بعد 50 ساعة إذا ما جدّدته. فوت على تطبيق Developer Mode واكبس **Extend**.
 
+### ما عندك كمبيوتر؟ استعمل تلفون أندرويد
+نزّل **Termux** من [F-Droid](https://f-droid.org/packages/com.termux/)، وبعدين:
+```
+pkg update -y && pkg install -y nodejs git
+git clone -b ccr-2a04982c-y0wjxr https://github.com/zaferneccar/MyTvApp
+cd MyTvApp
+npm install
+```
+وكمّل بنفس أوامر `ares-setup-device` و `--getkey` اللي فوق.
+
 ## التجربة والتثبيت
 
 ```

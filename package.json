@@ -6,7 +6,7 @@
   "scripts": {
     "photos": "node tools/build-photos.js",
     "preview": "npm run photos && npx --yes http-server -p 8080 -c-1 .",
-    "package": "npm run photos && ares-package . -o dist -e node_modules -e dist -e tools -e README.md -e package.json -e package-lock.json",
+    "package": "npm run photos && node tools/stage.js && ares-package build -o dist",
     "install-tv": "ares-install -d tv dist/com.mytvapp.home_1.0.0_all.ipk",
     "launch": "ares-launch -d tv com.mytvapp.home",
     "deploy": "npm run package && npm run install-tv && npm run launch",
