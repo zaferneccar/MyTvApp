@@ -115,5 +115,6 @@
   weather();
   setInterval(weather, 30 * 60 * 1000);
   slideshow();
+  notes.start(C.notes);
   nav.first();
 })();

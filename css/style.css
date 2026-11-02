@@ -53,6 +53,28 @@ html, body {
 #clock { font-size: 120px; font-weight: 300; line-height: 1; }
 #date, #weather { font-size: 30px; color: var(--muted); margin-top: 10px; direction: rtl; text-align: left; }
 
+/* ---------- لوحة الملاحظات ---------- */
+#notes {
+  margin-top: 36px;
+  width: 760px;
+  padding: 28px 36px;
+  border-radius: 24px;
+  background: rgba(10, 14, 30, 0.62);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+#notes[hidden] { display: none; }
+#notes h3 { font-size: 30px; font-weight: 700; color: var(--focus); margin-bottom: 14px; }
+#notesList { list-style: none; }
+#notesList li {
+  font-size: 34px; line-height: 1.35;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+#notesList li:first-child { border-top: 0; }
+#notesList li .who { font-size: 24px; color: var(--muted); margin-right: 12px; }
+#notesList li.new { animation: flash 2s ease 3; }
+@keyframes flash { 50% { color: var(--focus); } }
+
 .row { margin-top: 24px; }
 .row h2 { font-size: 30px; font-weight: 600; margin-bottom: 18px; color: var(--muted); }
 .tiles { display: flex; }
