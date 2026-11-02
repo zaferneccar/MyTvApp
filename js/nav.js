@@ -36,17 +36,27 @@
     if (best) focus(best);
   }
 
-  document.addEventListener('keydown', function (e) {
-    switch (e.keyCode) {
+  function handle(keyCode) {
+    switch (keyCode) {
       case KEY.LEFT:  move('left');  break;
       case KEY.RIGHT: move('right'); break;
       case KEY.UP:    move('up');    break;
       case KEY.DOWN:  move('down');  break;
       case KEY.ENTER: if (current) current.click(); break;
       case KEY.BACK:  break; // نحنا الشاشة الرئيسية، ما في لوين نرجع
-      default: return;
+      default: return false;
     }
-    e.preventDefault();
+    return true;
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (handle(e.keyCode)) e.preventDefault();
+  });
+
+  // أزرار جايه من الغلاف (لما التركيز يكون برّا الصفحة)
+  window.addEventListener('message', function (e) {
+    var m = e.data || {};
+    if (m.type === 'key' && e.source === window.parent) handle(m.keyCode);
   });
 
   document.addEventListener('mouseover', function (e) {
